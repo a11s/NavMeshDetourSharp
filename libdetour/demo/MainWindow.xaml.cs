@@ -24,5 +24,15 @@ namespace demo
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            listbox_maps.Items.Clear();
+            var files= System.IO.Directory.GetFiles("maps","*.bytes");
+            foreach (var item in files)
+            {
+                listbox_maps.Items.Add(item);
+            }
+        }
     }
 }
