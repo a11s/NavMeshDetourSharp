@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libdetour", "libdetour\libd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "demo", "demo\demo.csproj", "{12D1BB8C-6375-460F-AA00-5A88E79531E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "detourwarpper", "detourwarpper\detourwarpper.csproj", "{8C9366CA-F340-4A4A-A959-4C1BF2ECC40A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,18 @@ Global
 		{12D1BB8C-6375-460F-AA00-5A88E79531E4}.Release|x64.Build.0 = Release|Any CPU
 		{12D1BB8C-6375-460F-AA00-5A88E79531E4}.Release|x86.ActiveCfg = Release|Any CPU
 		{12D1BB8C-6375-460F-AA00-5A88E79531E4}.Release|x86.Build.0 = Release|Any CPU
+		{8C9366CA-F340-4A4A-A959-4C1BF2ECC40A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C9366CA-F340-4A4A-A959-4C1BF2ECC40A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C9366CA-F340-4A4A-A959-4C1BF2ECC40A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8C9366CA-F340-4A4A-A959-4C1BF2ECC40A}.Debug|x64.Build.0 = Debug|Any CPU
+		{8C9366CA-F340-4A4A-A959-4C1BF2ECC40A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8C9366CA-F340-4A4A-A959-4C1BF2ECC40A}.Debug|x86.Build.0 = Debug|Any CPU
+		{8C9366CA-F340-4A4A-A959-4C1BF2ECC40A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C9366CA-F340-4A4A-A959-4C1BF2ECC40A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C9366CA-F340-4A4A-A959-4C1BF2ECC40A}.Release|x64.ActiveCfg = Release|Any CPU
+		{8C9366CA-F340-4A4A-A959-4C1BF2ECC40A}.Release|x64.Build.0 = Release|Any CPU
+		{8C9366CA-F340-4A4A-A959-4C1BF2ECC40A}.Release|x86.ActiveCfg = Release|Any CPU
+		{8C9366CA-F340-4A4A-A959-4C1BF2ECC40A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

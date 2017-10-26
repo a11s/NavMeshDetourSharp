@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="410.465" Width="870.349" Loaded="Window_Loaded">
     <Grid>
-        <ListBox x:Name="listbox_maps" HorizontalAlignment="Left" Margin="10,10,0,10" Width="150"/>
-        <local:MapView Margin="172,10,10,10"/>
+        <ListBox x:Name="listbox_maps" HorizontalAlignment="Left" Margin="10,10,0,10" Width="150" SelectionChanged="listbox_maps_SelectionChanged"/>
+        <local:MapView x:Name="mapView" Margin="172,10,10,10"/>
 
     </Grid>
 </Window>

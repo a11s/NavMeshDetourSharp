@@ -1,4 +1,5 @@
 ﻿using HelixToolkit.Wpf.SharpDX;
+using LibDetour;
 using SharpDX;
 using System;
 using System.Collections.Generic;
@@ -85,6 +86,54 @@ namespace demo
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
             lineTriangulatedPolygon.Geometry = null;
+        }
+
+        Warpper dh = new Warpper();
+
+        public void LoadMap(string bytesFileName)
+        {
+            bool succ = false;
+            if (dh.MapLoaded)
+            {
+                dh.Unload();
+            }
+            succ = dh.Load(bytesFileName);
+            if (succ)
+            {
+                DHTriangle[] triangles = dh.GetTriangles();
+                DHVertex[] verts = dh.GetVertexes();
+                var lb = new LineBuilder();
+
+                //mViewModel.GroundGeometry.Clear();
+                //groundGroup.Children.Clear();
+                mViewModel.ModelTransform = new TranslateTransform3D();
+                for (int i = 0; i < triangles.Length; i++)
+                {
+                    var node = triangles[i];
+
+                    lb.AddLine(MapReader.U2V(node.vertices0), MapReader.U2V(node.vertices1));
+                    lb.AddLine(MapReader.U2V(node.vertices1), MapReader.U2V(node.vertices2));
+                    lb.AddLine(MapReader.U2V(node.vertices2), MapReader.U2V(node.vertices0));
+
+                    MeshGeometryModel3D mgm = MapReader.MakeMeshGeometryModel3DUnity(node, mViewModel.Material);
+
+                    //mgm.HitTest()
+                    //mViewModel.GroundGeometry.Add(mgm);
+                    //groundGroup.Children.Add(mgm);
+                    mgm.Attach(mViewModel.modelView.RenderHost);
+
+                }
+                
+                lineTriangulatedPolygon.Geometry = lb.ToLineGeometry3D();
+
+            }
+
+            //icon = AddOrUpdatePlayerPosition("player", 0, 0, 0, 0.5f, 0, 0, 0);
+            //icon.LastUpdateTime = DateTime.Now.AddSeconds(1);
+            //Ray r = new Ray(mViewModel.Camera.Position,);
+
+
+
         }
     }
 }

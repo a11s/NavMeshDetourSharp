@@ -34,5 +34,14 @@ namespace demo
                 listbox_maps.Items.Add(item);
             }
         }
+
+        private void listbox_maps_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (listbox_maps.SelectedIndex>=0)
+            {
+                var s = listbox_maps.SelectedItem as string;
+                mapView.LoadMap(s);
+            }
+        }
     }
 }
